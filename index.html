@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>My Dream Wedding</title>
+    <link rel="icon" href="img/wedding_icon.png" type="image/x-icon" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -29,6 +30,7 @@
 
     <!-- Simply Coutdown -->
     <link rel="stylesheet" href="coutdown/themes/losange.css" />
+
     <!-- <link rel="stylesheet" href="coutdown/themes/default.css" /> -->
     <script src="coutdown/simplyCountdown.js"></script>
     <script src="coutdown/simplyCountdown.umd.js"></script>
@@ -182,6 +184,7 @@
         </div>
       </div>
     </section>
+
     <!-- info -->
     <section id="info" class="info">
       <div class="container">
@@ -433,6 +436,34 @@
               />
             </a>
           </div>
+          <div class="col mt-3">
+            <a
+              href="img/gallery/married.jpg"
+              data-toggle="lightbox"
+              data-caption="me 6"
+              data-gallery="mygallery"
+            >
+              <img
+                src="img/gallery/thumbnail/prewed.jpg"
+                alt="me 6"
+                class="img-fluid w-100 rounded"
+              />
+            </a>
+          </div>
+          <div class="col mt-3">
+            <a
+              href="img/gallery/married.jpg"
+              data-toggle="lightbox"
+              data-caption="me 6"
+              data-gallery="mygallery"
+            >
+              <img
+                src="img/gallery/thumbnail/prewed.jpg"
+                alt="me 6"
+                class="img-fluid w-100 rounded"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -627,7 +658,6 @@
         minutes: 0,
         seconds: 0,
         words: {
-          // Custom labels, with lambda for plurals
           days: {
             root: "hari",
             lambda: (root, n) => (n > 1 ? root + "" : root),
@@ -656,16 +686,16 @@
         countUp: false,
         onEnd: () => {
           console.log("Countdown ended!");
-        }, // Callback when countdown ends
+        },
         onStop: () => {
           console.log("Countdown stopped!");
-        }, // Callback when countdown is stopped
+        },
         onResume: () => {
           console.log("Countdown resumed!");
-        }, // Callback when countdown is resumed
+        },
         onUpdate: (params) => {
           console.log("Countdown updated:", params);
-        }, // Callback when countdown is updated
+        },
       });
     </script>
 
@@ -702,36 +732,32 @@
     </script>
     <!-- scroll -->
     <script>
-      // Menyimpan elemen-elemen yang diperlukan
       const audioIconWrapper = document.querySelector(".audio-icon-wrapper");
       const audioIcon = document.querySelector(".audio-icon-wrapper i");
       const song = document.querySelector("#song");
       let isPlaying = false;
 
-      // Fungsi untuk memainkan audio
       function playAudio() {
-        song.volume = 1.0; // Menetapkan volume audio
-        audioIconWrapper.style.display = "flex"; // Menampilkan icon audio
-        song.play(); // Memainkan audio
-        isPlaying = true; // Menandakan audio sedang diputar
+        song.volume = 1.0;
+        audioIconWrapper.style.display = "flex";
+        song.play();
+        isPlaying = true;
       }
 
-      // Fungsi untuk menangani event klik pada icon audio
       audioIconWrapper.onclick = function () {
         if (isPlaying) {
-          song.pause(); // Menjeda audio
+          song.pause();
           audioIcon.classList.remove("bi-disc");
           audioIcon.classList.add("bi-pause-circle");
         } else {
-          song.play(); // Melanjutkan audio
+          song.play();
           audioIcon.classList.add("bi-disc");
           audioIcon.classList.remove("bi-pause-circle");
         }
 
-        isPlaying = !isPlaying; // Mengubah status pemutaran audio
+        isPlaying = !isPlaying;
       };
 
-      // Memulai audio tanpa perlu memblokir scroll
       playAudio();
     </script>
 
